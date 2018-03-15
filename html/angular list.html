@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../files/w3school/w3-2.3.css">
+<link rel="stylesheet" href="../files/w3school/w3-theme/w3-theme-green.css">
+<link rel="stylesheet" href="../custom-css/style.css">
+<script src="../angular/angular1.4.8.js"></script>
+<style>
+</style>
+
+<script>
+</script>
+</head>
+<body class=" w3-theme-l5">
+<div class="w3-container" ng-app="myApp" ng-controller="myCtrl">
+
+  <ul class="w3-ul w3-hoverable">
+      <li ng-repeat="x in names" ng-click="remove($index)">  {{  x   }}  </li>
+  </ul>
+
+<form>
+<input ng-model="add" class="w3-input w3-pale-blue" required="required">
+
+<label class="w3-label w3-validate">Add something</label>   <br>
+
+<input type="submit" ng-click="addme()" class="" value="add" >
+</form>
+
+<h4 class="w3-red w3-tag">  {{  err  }}  </h4>
+
+</div>
+<script>
+var app=angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+    $scope.names=["Stephen","Tom","Riddle"];
+    $scope.addme=function(){
+        if(!$scope.add)
+        return;
+    $scope.err="";
+        if($scope.names.indexOf($scope.add)==-1)
+        $scope.names.push($scope.add);
+
+    else
+        $scope.err="this item already exist";
+
+    };
+    $scope.remove=function(a){
+    $scope.err="";
+    $scope.names.splice(a,1)
+    }
+                                            });
+</script>
+</body>
+</html>
