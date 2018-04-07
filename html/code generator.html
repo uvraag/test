@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://rawgit.com/uvraag/math-code/master/css/w3-4.css">
+<link rel="stylesheet" href="https://rawgit.com/uvraag/math-code/master/css/w3-theme-teal.css">
+<script src="../jq/jquery.min1.12.0.js"></script>
+<title>Code Generator</title>
+<style>
+</style>
+
+<script>
+</script>
+
+
+</head>
+
+
+<body>
+	<div class="w3-container">
+      <input type="number"
+         class="w3-input"
+         value="6"
+         id="demo"
+      >
+		<button type="button"
+			class="w3-btn w3-large w3-indigo" >
+			Just create code
+		</button>
+		<p class="w3-jumbo w3-label"></p>
+</div>
+
+<script>
+//document.getElementById("para");
+$( document ).ready( function() {
+	$( "button" ).click( function() {
+		var arr = "abcdefghijklmnopqrstuvwxyz";
+		var code = "",
+			temp = "",
+			demo = document.getElementById( "demo" ).value;
+		for( var i=0; i < demo; i++ ){
+			temp = Math.floor( Math.random() * 26 );
+			code += arr.charAt(temp);
+		}
+		$( "p" ).text( code );
+	});
+});
+</script>
+</body>
+</html>
