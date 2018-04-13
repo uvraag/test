@@ -49,7 +49,7 @@ void studentInfo() {
       nosc[30],
       norc[30];
    printf("\nEnter Enrollment Number : \n", );
-   scanf("%lf", &en);
+   scanf("%lf", &en);              // scanf("%ld", &en);
    switch (en) {
       case 176000100:   yos=1;
          strcpy(nop, "BCA");
@@ -86,4 +86,46 @@ void studentInfo() {
    printf("Your Study Centre is %s\n", nosc);
    printf("Your Regional Centre is %s\n", nosc);
    printf("Due balance is %d\n", fee);
+}
+
+void despatch() {
+   long en;
+   char desp[30];
+   printf("Enter enrollment number\n");
+   scanf("%ld", &en);
+   switch (en) {
+      case 176000100: strcpy(desp, "Due to despatch"); break;
+      case 176000101: strcpy(desp, "Despatch"); break;
+      case 176000102: strcpy(desp, "Due to despatch"); break;
+      case 176000103: strcpy(desp, "Due to despatch"); break;
+      case 176000104: strcpy(desp, "Despatch"); break;
+      case 176000105: strcpy(desp, "Due to despatch"); break;
+      case 176000106: strcpy(desp, "Despatch"); break;
+   }
+   printf("Your despatch %s\n", desp);
+}
+
+void fee() {
+   printf("First Semister fee is 4000\n");
+   printf("Second Semister fee is 5000\n");
+   printf("Third Semister fee is 6000\n");
+   printf("Forth Semister fee is 7000\n");
+   printf("Fifth Semister fee is 8000\n");
+   printf("Sixth Semister fee is 9000\n");
+}
+
+void theory() {
+   char batch[7];
+   printf("Enter batch number : \n");
+   scanf("%s", batch);
+   printf("C.Code\tTimings\tFEB\tMAR\tAPR\tMAY\n");
+   if (strcmp(batch, "B2T1")==0) {
+      printf("MCS-011\t3-5pm\t12,16,19,23,26\tXXXXXX\tXXXXXX\tXXXXXX\n");
+      printf("MCS-012\t10-12pm\t13,15,20,22,27\t6,13,20\tXXXXXX\tXXXXXX\n");
+      printf("MCS-013\t10-12pm\tXXXXXX\t27,28,29\tXXXXXX\tXXXXXX\n");
+      printf("MCS-015\t3-5pm\t12,16,19,23,26\tXXXXXX\tXXXXXX\tXXXXXX\n");
+      printf("ECO-02\t3-5pm\tXXXXXX\t12,16,19,23,26\tXXXXXX\tXXXXXX\n");
+   } else if (strcmp(batch, "B2T2")==0) {
+
+   }
 }
