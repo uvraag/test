@@ -177,3 +177,10 @@ void changeAddress() {
    }
    fclose(fp);
 }
+
+void queries() {
+   printf("1. What is Academic Schedule ?\n");
+   printf("Ans. Admission to various programmes of the University are open as per the Academic Calendar. The admission announcements are widely publicised through national, regional media and IGNOU Web Site:- www.ignou.ac.in\n");
+   printf("2. What is an auto generated Control Number ?\n");
+   printf("Ans. An auto generated Control Number is allotted provisionally after submission of online application form.\n");
+}
