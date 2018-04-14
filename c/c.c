@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <string.h>
 void studentInfo();
 void despatch();
 void fee();
@@ -126,6 +127,53 @@ void theory() {
       printf("MCS-015\t3-5pm\t12,16,19,23,26\tXXXXXX\tXXXXXX\tXXXXXX\n");
       printf("ECO-02\t3-5pm\tXXXXXX\t12,16,19,23,26\tXXXXXX\tXXXXXX\n");
    } else if (strcmp(batch, "B2T2")==0) {
-
+      printf("MCS-011\t8-10am\t11,17,18,24,25\tXXXXXX\tXXXXXX\tXXXXXX\n");
+      printf("MCS-012\t8-10am\tXXXXXX\t3,4,10,11,17,18,24,25\tXXXXXX\tXXXXXX\n");
+      printf("MCS-013\t1:30-3:30pm\tXXXXXX\t18,24,25\tXXXXXX\tXXXXXX\n");
+      printf("MCS-015\t1:30-3:30pm\tXXXXXX\t10,11\tXXXXXX\tXXXXXX\n");
+      printf("ECO-02\t1:30-3:30pm\t11,17,18,24,25\tXXXXXX\tXXXXXX\tXXXXXX\n");
    }
+}
+
+void practical() {
+   char batch[7];
+   printf("Enter batch number : ");
+   scanf("%s", batch);
+   printf("C.Code\tTimings\tFEB\tMAR\tAPR\tMAY\n");
+   if (strcmp(batch, "B2T1")==0) {
+      printf("BCSL-021\t7-10am\t13,15,20,22,27\t6,13,20,21,27\tXXXXXX\tXXXXXX\n");
+      printf("BCSL-022\t7-10am\tXXXXXX\tXXXXXX\t2,4,9,11,16,18,23,25,30\t2\n");
+   } else if (strcmp(batch, "B2T2")==0) {
+      printf("BCSL-021\t10-1pm\t11,17,18,24,25\t3,4,10,11,17\tXXXXXX\tXXXXXX\n");
+      printf("BCSL-022\t10-1pm\tXXXXXX\t18,24,25,31\t1,7,8,14,15,21\tXXXXXX\n");
+   }
+}
+
+void assignment() {
+   printf("Date\tTimings\n");
+   printf("21-4-2018\t10-1pm\n");
+}
+
+void changeAddress() {
+   char add[80];  //="Palam Extension Ramphal Chowk\nNew Delhi - 110077";
+   char ch;
+   FILE *fp;
+   fp=fopen("address.dat", "r+b");
+   if (fp==NULL) {
+      printf("File not found\n");
+      exit(1);
+   }
+   fseek(fp, 0, SEEK_SET);
+   fflush(stdin);
+   fscanf(fp, "%s", add);
+   printf("Present Correspondence Address %s\n", add);
+   printf("\nIf you change address (y/n) : ");
+   scanf("%c", &ch);
+   if (ch=='y') {
+      printf("Write your Address : \n");
+      scanf("%s", add);
+      fprintf(fp, "%s", add);
+      printf("\nYour Address will be updated\n");
+   }
+   fclose(fp);
 }
