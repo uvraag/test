@@ -24,7 +24,7 @@ void main() {
       printf("7) Change of the Correspondence Address\n");
       printf("8) General Queries\n");
       printf("9) Quit\n\n");
-      printf("Enter your choice : \n");
+      printf("Enter your choice : ");
       scanf("%d", &choice);
       switch (choice) {
          case 1:  studentInfo(); break;
@@ -49,7 +49,7 @@ void studentInfo() {
       dur[20],
       nosc[30],
       norc[30];
-   printf("\nEnter Enrollment Number : \n", );
+   printf("\nEnter Enrollment Number : ");
    scanf("%lf", &en);              // scanf("%ld", &en);
    switch (en) {
       case 176000100:   yos=1;
@@ -92,18 +92,18 @@ void studentInfo() {
 void despatch() {
    long en;
    char desp[30];
-   printf("Enter enrollment number\n");
+   printf("Enter enrollment number : ");
    scanf("%ld", &en);
    switch (en) {
-      case 176000100: strcpy(desp, "Due to despatch"); break;
-      case 176000101: strcpy(desp, "Despatch"); break;
-      case 176000102: strcpy(desp, "Due to despatch"); break;
-      case 176000103: strcpy(desp, "Due to despatch"); break;
-      case 176000104: strcpy(desp, "Despatch"); break;
-      case 176000105: strcpy(desp, "Due to despatch"); break;
-      case 176000106: strcpy(desp, "Despatch"); break;
+      case 176000100: strcpy(desp, "due"); break;
+      case 176000101: strcpy(desp, "clear"); break;
+      case 176000102: strcpy(desp, "due"); break;
+      case 176000103: strcpy(desp, "due"); break;
+      case 176000104: strcpy(desp, "clear"); break;
+      case 176000105: strcpy(desp, "due"); break;
+      case 176000106: strcpy(desp, "clear"); break;
    }
-   printf("Your despatch %s\n", desp);
+   printf("Your despatch is %s\n", desp);
 }
 
 void fee() {
@@ -117,7 +117,7 @@ void fee() {
 
 void theory() {
    char batch[7];
-   printf("Enter batch number : \n");
+   printf("Enter batch number : ");
    scanf("%s", batch);
    printf("C.Code\tTimings\tFEB\tMAR\tAPR\tMAY\n");
    if (strcmp(batch, "B2T1")==0) {
@@ -151,14 +151,14 @@ void practical() {
 
 void assignment() {
    printf("Date\tTimings\n");
-   printf("21-4-2018\t10-1pm\n");
+   printf("21-4-2018\t8am\n");
 }
 
 void changeAddress() {
    char add[80];  //="Palam Extension Ramphal Chowk\nNew Delhi - 110077";
    char ch;
    FILE *fp;
-   fp=fopen("address.dat", "r+b");
+   fp=fopen("address.txt", "r+");
    if (fp==NULL) {
       printf("File not found\n");
       exit(1);
@@ -180,7 +180,7 @@ void changeAddress() {
 
 void queries() {
    printf("1. What is Academic Schedule ?\n");
-   printf("Ans. Admission to various programmes of the University are open as per the Academic Calendar. The admission announcements are widely publicised through national, regional media and IGNOU Web Site:- www.ignou.ac.in\n");
+   printf("Ans. Admission to various programmes of the University are open as per the Academic Calendar. The admission announcements are widely publicised through national, regional media and IGNOU\nWeb Site:- www.ignou.ac.in\n\n\n");
    printf("2. What is an auto generated Control Number ?\n");
    printf("Ans. An auto generated Control Number is allotted provisionally after submission of online application form.\n");
 }
