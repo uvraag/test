@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://rawgit.com/uvraag/math-code/master/css/w3-4.css">
 <link rel="stylesheet" href="https://rawgit.com/uvraag/math-code/master/css/w3-theme-teal.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-<title>Code Generator</title>
+<title>Word Generator</title>
 <style>
 </style>
 
@@ -25,7 +25,7 @@
       >
 		<button type="button"
 			class="w3-btn w3-large w3-indigo" >
-			Just create code
+			Just create
 		</button>
 		<p class="w3-jumbo w3-text-cyan"></p>
 </div>
@@ -33,7 +33,7 @@
 <script>
 $( document ).ready( function() {
 	$( "button" ).click( function() {
-		var arr = "abcdefghijklmnopqrstuvwxyz";
+		var dict = [];
 		var code = "",
 			temp = "",
 			demo = document.getElementById( "demo" ).value;
